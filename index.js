@@ -9,7 +9,7 @@ app.post("/events", async (req, res) => {
    const  {type, data} = req.body;
 
    if(type === 'CommentCreated'){
-      const status = data.content.includes('oranges') ? 'rejected' : 'approved';
+      const status = data.content.includes('oranges') ? 'rejected' : 'approved'; //Replace oranges with any word you want to remove in comment.
 
       try {
          await axios.post('http://localhost:4005/events',{
