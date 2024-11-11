@@ -12,7 +12,7 @@ app.post("/events", async (req, res) => {
       const status = data.content.includes('oranges') ? 'rejected' : 'approved'; //Replace oranges with any word you want to remove in comment.
 
       try {
-         await axios.post('http://localhost:4005/events',{
+         await axios.post('http://event-bus-srv:4005/events',{
             type: 'CommentModerated',
             data : {
                id : data.id,
